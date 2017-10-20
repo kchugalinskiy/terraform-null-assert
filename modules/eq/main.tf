@@ -1,3 +1,7 @@
+terraform {
+  required_version = ">= 0.9.0"
+}
+
 resource "null_resource" "checker" {
   provisioner "local-exec" {
     command = "echo 'Condition failed. Expected: \"${var.expected}\" actual: \"${var.actual}\"' && exit 1"
